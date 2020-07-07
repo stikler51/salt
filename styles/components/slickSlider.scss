@@ -383,27 +383,28 @@
     .events-slider-wrapper {
       &:before {
         width: calc((100% - 1200px)/2);
-        background: linear-gradient(90deg, #FAF3EE 65%, rgba(246, 243, 240, 0) 100%);
+        background: linear-gradient(90deg, #97E9ED 65%, rgba(246, 243, 240, 0) 100%);
       }
 
       &:after {
         width: calc((100% - 1200px)/2);
-        background: linear-gradient(270deg, #FAF3EE 65%, rgba(246, 243, 240, 0) 100%);
+        background: linear-gradient(270deg, #97E9ED 65%, rgba(246, 243, 240, 0) 100%);
       }
       }
     }
+
 
   .compilation-block {
     .compilation-slider-wrapper {
       position: relative;
       &:before {
         width: calc((100% - 1200px)/2);
-        background: linear-gradient(90deg, #FFE5D3 65.65%, rgba(246, 243, 240, 0) 100%);
+        background: linear-gradient(90deg, #97E9ED 65.65%, rgba(246, 243, 240, 0) 100%);
       }
 
       &:after {
         width: calc((100% - 1200px)/2);
-        background: linear-gradient(270deg, #FFE5D3 65.65%, rgba(246, 243, 240, 0) 100%);
+        background: linear-gradient(270deg, #97E9ED 65.65%, rgba(246, 243, 240, 0) 100%);
       }
     }
   }

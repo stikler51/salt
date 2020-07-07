@@ -1,0 +1,269 @@
+.footer {
+  background: #013647;
+  padding: 60px 0 40px 0;
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  a {
+    color: white;
+    transition: 0.3s;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  .logo {
+    margin-top: 0;
+    a {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        width: 200px;
+        height: auto;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: #97E9ED;
+      }
+    }
+
+  }
+
+  .pc-logo {
+    a {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+
+
+      p {
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0 0 18px 0;
+      }
+
+      img {
+        height: 27px;
+        width: auto;
+      }
+    }
+  }
+
+  .social-links {
+    margin: 10px 0 30px 0;
+    justify-content: center;
+    display: flex;
+    a {
+      font-size: 18px;
+      margin: 0 10px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .technical-menu {
+    margin-bottom: 30px;
+    .menu-wrapper {
+      justify-content: center;
+
+      .menu-item {
+        margin: 0 15px;
+
+        a {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+      }
+    }
+  }
+
+  .disclaimer {
+    margin: 30px 0;
+    a {
+      text-decoration-color: white;
+      font-size: 14px;
+      line-height: 20px;
+
+      &:hover {
+        text-decoration-color: $hover-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px){
+  .footer {
+    padding: 2.857rem  /* 60/21 */ 0 1.905rem  /* 40/21 */ 0;
+
+    p {
+      font-size: 0.667rem  /* 14/21 */;
+      line-height: 0.952rem  /* 20/21 */;
+    }
+
+    .logo {
+      a {
+        img {
+          width: 9.524rem  /* 200/21 */;
+        }
+
+        p {
+          font-size: 0.952rem  /* 20/21 */;
+          line-height: 1.19rem  /* 25/21 */;
+        }
+      }
+
+    }
+
+    .pc-logo {
+      a {
+        p {
+          font-size: 0.952rem  /* 20/21 */;
+          line-height: 1.19rem  /* 25/21 */;
+          margin: 0 0 0.857rem  /* 18/21 */ 0;
+        }
+
+        img {
+          height: 1.286rem  /* 27/21 */;
+          width: auto;
+        }
+      }
+    }
+
+    .social-links {
+      margin: 0.476rem  /* 10/21 */ 0 1.429rem  /* 30/21 */ 0;
+      a {
+        font-size: 0.857rem  /* 18/21 */;
+        margin: 0 0.476rem  /* 10/21 */;
+
+        i {
+          font-size: 0.952rem  /* 20/21 */;
+        }
+      }
+    }
+
+    .technical-menu {
+      margin-bottom: 1.429rem  /* 30/21 */;
+      .menu-wrapper {
+        justify-content: center;
+
+        .menu-item {
+          margin: 0 0.714rem  /* 15/21 */;
+
+          a {
+            font-size: 0.667rem  /* 14/21 */;
+            line-height: 0.952rem  /* 20/21 */;
+          }
+
+        }
+      }
+    }
+
+    .disclaimer {
+      margin: 1.429rem  /* 30/21 */ 0;
+      a {
+        font-size: 0.667rem  /* 14/21 */;
+        line-height: 0.952rem  /* 20/21 */;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+
+    p, a {
+      font-size: 12px;
+      line-height: 15px;
+
+      a {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+
+    .logo {
+      a {
+
+        img {
+          width: 120px;
+          height: auto;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+
+    }
+
+    .pc-logo {
+      a {
+        p {
+          font-size: 15px;
+          line-height: 20px;
+        }
+
+        img {
+          height: 20px;
+          width: auto;
+        }
+      }
+    }
+
+    .disclaimer {
+      margin: 40px 0;
+      p {
+        a {
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+    }
+
+    .social-links {
+      margin: 40px 0;
+      a {
+        font-size: 15px;
+        margin: 0 7px;
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .technical-menu {
+      .menu-wrapper {
+        flex-direction: column;
+        .menu-item {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

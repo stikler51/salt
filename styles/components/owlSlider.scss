@@ -1,0 +1,225 @@
+.owl-carousel  {
+  .owl-stage-outer {
+    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    &:before {
+      content: '';
+      width: 8%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg, #FAF3EE 22.65%, rgba(246, 243, 240, 0) 100%);
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      width: 8%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: linear-gradient(270deg, #FAF3EE 22.65%, rgba(246, 243, 240, 0) 100%);
+      z-index: 1;
+    }
+
+
+    .owl-stage {
+      display: flex;
+    }
+    .owl-item {
+      display: flex;
+    }
+  }
+
+  .owl-nav {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 0;
+
+    button {
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid $active-color!important;
+      border-radius: 2rem;
+      background: white!important;
+      position: absolute;
+      transform: translateY(-50%);
+
+
+
+      &.owl-prev {
+        left: -2rem;
+        background: white url("../src/slider-arrow-left.svg") no-repeat center center!important;
+        background-size: 60% 60%;
+        &.disabled {
+          display:none;
+        }
+      }
+
+      &.owl-next {
+        right: -2rem;
+        background: white url("../src/slider-arrow-right.svg") no-repeat center center!important;
+        background-size: 60% 60%;
+        &.disabled {
+          display:none;
+        }
+      }
+    }
+  }
+
+  .owl-dots {
+    align-items: center;
+    position: initial;
+    margin: 20px auto 10px;
+    transform: none;
+    display: flex;
+    justify-content: center;
+
+    .owl-dot {
+      background-color: white;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active {
+        width: 15px;
+        height: 15px;
+        background-color: $active-color;
+      }
+
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .owl-carousel {
+    .owl-stage-outer {
+      &:before {
+        width: calc((100% - 1200px)/2);
+        background: linear-gradient(90deg, #FAF3EE 65%, rgba(246, 243, 240, 0) 100%);
+      }
+
+      &:after {
+        width: calc((100% - 1200px)/2);
+        background: linear-gradient(270deg, #FAF3EE 65%, rgba(246, 243, 240, 0) 100%);
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1360px) and (min-width: 768px) {
+  .owl-carousel  {
+    .owl-stage {
+      display: -webkit-box !important;
+      display: -moz-box !important;
+      display: -ms-box !important;
+      display: box !important;
+    }
+    .owl-stage-outer {
+      padding-top: 0.714rem;
+
+      &:before {
+        width: 6%
+      }
+
+      &:after {
+        width: 6%
+      }
+
+    }
+
+    .owl-nav {
+      button {
+        width: 2.857rem;
+        height: 2.857rem;
+        &.owl-prev {
+          left: 0;
+          background: white url("../src/slider-arrow-left.svg") no-repeat center center!important;
+          background-size: 60% 60%!important;
+          &.disabled {
+            display:none;
+          }
+        }
+
+        &.owl-next {
+          right: 0;
+          background: white url("../src/slider-arrow-right.svg") no-repeat center center!important;
+          background-size: 60% 60% !important;
+          &.disabled {
+            display:none;
+          }
+        }
+      }
+    }
+
+    .owl-dots {
+      margin: 1.429rem auto 0.476rem;
+
+      .owl-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+
+        &.active {
+          width: 0.6rem;
+          height: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .owl-carousel {
+    .owl-stage-outer {
+      &:before {
+        content: none;
+      }
+
+      &:after {
+        content: none;
+      }
+
+      .owl-stage {
+        position: absolute;
+
+        &:after {
+          content: '';
+          width: 340px;
+          height: auto;
+        }
+      }
+
+      .owl-dots {
+        margin-top: 5px;
+      }
+
+      .owl-nav{
+        display: none;
+      }
+    }
+  }
+
+  .events-slider {
+    .owl-stage {
+      //padding: 0 100px;
+    }
+    .owl-item {
+      width: 100%;
+      min-width: 290px;
+    }
+  }
+}

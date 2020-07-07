@@ -1,0 +1,166 @@
+.share {
+  margin: 10px auto 40px auto;
+  display: inline-block;
+  .share-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 450px;
+
+    .quote-tag {
+      display: none;
+    }
+
+    a {
+      transition: 0.3s;
+      text-align: center;
+      &:hover {
+        color: black;
+        background: #00CED8;
+      }
+
+      &:active {
+        color: black;
+        background: #006484;
+      }
+
+      i {
+        line-height: 40px;
+      }
+    }
+
+    >* {
+      flex-grow: 1;
+      display: block;
+      border: 1px solid #00CED8!important;
+      border-width: 1px 1px 1px 0!important;
+
+      &:first-child {
+        &.quote-tag {
+          &+* {
+            border-width: 1px 1px 1px 1px!important;
+          }
+        }
+        border-width: 1px 1px 1px 1px!important;
+      }
+      //height: 40px;
+    }
+  }
+
+  &.with-tag {
+    min-width: 100%;
+
+    .quote-tag {
+      display: block;
+      text-align: center;
+      font-size: 16px;
+      line-height: 40px;
+    }
+
+    .share-wrapper {
+      >* {
+        &:first-child {
+          &.quote-tag {
+            &+* {
+              border-width: 1px 1px 1px 0!important;
+            }
+          }
+          border-width: 1px 1px 1px 1px!important;
+        }
+      }
+    }
+  }
+
+  &.special {
+    min-width: 800px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px) {
+  .share {
+    margin: 0.476rem 0 1.905rem 0;
+    .share-wrapper {
+
+      a {
+        i {
+          line-height: 1.905rem;
+        }
+      }
+
+      >* {
+        flex-grow: 1;
+      }
+    }
+
+    &.with-tag {
+      .quote-tag {
+        font-size: 0.762rem;
+        line-height: 1.905rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+.share {
+  width: 100%;
+  .share-wrapper {
+    min-width: 100%;
+
+    a {
+
+      i {
+        font-size: 23px;
+        line-height: 38px;
+      }
+    }
+
+    >* {
+      flex-grow: 1;
+      display: block;
+      border: 1px solid #00CED8;
+      border-width: 1px 1px 1px 0;
+
+      &:first-child {
+        border-width: 1px 1px 1px 1px;
+      }
+      //height: 40px;
+    }
+  }
+
+  &.with-tag {
+    min-width: 100%;
+
+    .share-wrapper {
+      flex-wrap: wrap;
+      .quote-tag {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        line-height: 40px;
+        width: 100%;
+        border-bottom-width: 0!important;
+      }
+      > *:first-child.quote-tag + * {
+        border-width: 1px 1px 1px 1px !important;
+      }
+
+
+    }
+
+
+
+  }
+
+  &.special {
+    .share-wrapper {
+      .quote-tag {
+        display: none;
+      }
+    }
+  }
+}
+
+}

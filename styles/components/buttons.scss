@@ -1,0 +1,142 @@
+.btn-wrapper {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.regular-button {
+  background: $button-color;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  border-width: 0;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 22px;
+  display: inline-block;
+  text-align: center;
+  color: #FFFFFF;
+  transition: 0.3s;
+  text-decoration: none;
+
+  &.with-arrow {
+    font-weight: 700!important;
+    &:after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: url("../src/link-arrow.svg") no-repeat center center;
+      background-size: cover;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  &.full-width {
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  &.half-width {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  &:hover {
+    background: $hover-button-color;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.bordered-btn {
+  background: transparent;
+  font-size: 22px;
+  line-height: 30px;
+  padding: 2px 10px;
+  border: 2px solid #006484;
+  border-radius: 6px;
+  color: #006484;
+  margin: 0;
+  transition: 0.3s;
+  text-decoration: none;
+  &:hover {
+    background: #006484;
+    color: white;
+  }
+
+  &.mobile {
+    display: none;
+  }
+}
+
+.mailing-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px) {
+  .regular-button {
+    padding: 0.5rem 0.71rem;
+    font-size: 1.0476rem;
+    line-height: 1.0476rem;
+
+    &.full-width {
+      font-size: 1.429rem;
+      line-height: 1.905rem;
+    }
+  }
+
+  .bordered-btn {
+    font-size: 1.0476rem;
+    line-height: 1.4285rem;
+    padding: 0.0952rem 0.5rem;
+  }
+
+  .mailing-btn {
+    i {
+      &:before {
+        width: 0.8571rem;
+        height: 0.8571rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .regular-button {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 16px;
+
+    &.full-width {
+      width: 100%;
+      text-align: center;
+      display: block;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
+
+
+  .bordered-btn {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    &.mobile {
+      display: inline-block;
+    }
+  }
+}

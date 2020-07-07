@@ -1,0 +1,141 @@
+.tags {
+  padding: 30px 0 20px 0;
+  background: #013647;
+
+  .bordered-btn.mobile {
+    display: none;
+    margin: 0;
+  }
+
+  .block-title {
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+  }
+
+  .bordered-btn {
+    border-color: $tags-color;
+    color: $tags-color;
+
+    &:hover {
+      background: $tags-color;
+      color: white;
+    }
+  }
+
+  .tags-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      color: white;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 50px;
+      margin: 0 20px 0 0;
+      text-decoration: none;
+
+      &:hover {
+        color: $tags-color;
+        cursor: pointer;
+      }
+
+
+      sup {
+        color: $tags-color
+      }
+    }
+  }
+}
+
+.materials-by-tag {
+  .block-title {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 50px 0;
+
+    .tagname {
+      font-weight: bold;
+      font-size: 50px;
+      line-height: 60px;
+      color: $tags-color;
+    }
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px){
+  .tags {
+    padding: 1.4285rem 0 1.9rem 0;
+
+    .block-title {
+      font-size: 2.38rem;
+      line-height: 2.85rem;
+      color: white;
+    }
+
+    .tags-list {
+      a {
+        font-size: 1.4285rem;
+        line-height: 2.38rem;
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+
+  .materials-by-tag {
+    .block-title {
+      font-size: 2.38rem;
+      line-height: 2.85rem;
+      margin: 2.38rem 0;
+
+      .tagname {
+        font-size: 2.38rem;
+        line-height: 2.85rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tags {
+    padding: 20px 0;
+    .block-title {
+      font-size: 30px;
+      line-height: 35px;
+      margin: 0 0 15px 0;
+      .bordered-btn {
+        display: none;
+      }
+    }
+
+    .bordered-btn.mobile {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 25px;
+      display: inline-block;
+    }
+
+    .tags-list {
+      a {
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .materials-by-tag {
+    .block-title {
+      font-size: 30px;
+      line-height: 35px;
+      margin: 30px 0;
+
+      .tagname {
+        font-size: 30px;
+        line-height: 35px;
+      }
+    }
+  }
+}

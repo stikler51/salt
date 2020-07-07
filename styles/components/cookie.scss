@@ -1,0 +1,80 @@
+.cookie-notification {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: #222222;
+  padding: 25px 0;
+
+  &.disabled {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .notification-text {
+    padding-right: 40px;
+
+    p, a {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 25px;
+      color: #FFFFFF;
+      text-decoration-color: white;
+      transition: 0.3s;
+      margin: 0;
+    }
+
+    a:hover {
+      color: $hover-color;
+      text-decoration-color: $hover-color;
+    }
+  }
+
+  .accept-cookie {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px) {
+  .cookie-notification {
+    padding: 1.19rem 0;
+
+    .notification-text {
+      padding-right: 1.9rem;
+
+      p, a {
+        font-size: 0.8571rem;
+        line-height: 1.19rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .cookie-notification {
+    padding: 15px 0;
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .notification-text {
+        padding: 0;
+        margin-bottom: 20px;
+        p, a {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 18px;
+        }
+
+      }
+    }
+  }
+}

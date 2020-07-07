@@ -1,0 +1,1460 @@
+@charset "utf-8";
+
+.media-card {
+  max-width: 380px;
+  min-height: 410px;
+  height: auto;
+  background: white;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  opacity: 1;
+  transition: ease 0.3s;
+  position: relative;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  //flex-shrink: 1;
+  //flex-grow: 1;
+
+  .card-body {
+    padding: 10px 20px 20px;
+    box-sizing: border-box;
+    .person-info {
+      display: none;
+    }
+
+    .timing {
+      display: none;
+    }
+
+    p {
+      margin: 0;
+      font-size: 23px;
+      line-height: 28px;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .ticker {
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    background: $active-color;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    z-index: 10;
+  }
+
+  a {
+    text-decoration: none;
+    height: 100%;
+    display: block;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &.press-club {
+    .ticker {
+      background: #E7792B;
+    }
+  }
+
+  &.salt {
+    .ticker {
+      background: $salt-color;
+      color: black;
+    }
+  }
+
+  &.academy {
+    .ticker {
+      background: $academy-color;
+      color: black;
+    }
+  }
+
+  &.podcast {
+    .ticker {
+      background: $podcast-color;
+    }
+  }
+
+  // Иконка камеры после описания
+  &.video {
+    .card-body {
+      p {
+        &:after {
+          content: "";
+          width: 24px;
+          height: 16px;
+          display: inline-block;
+          margin: 0 10px;
+          background-image: url("../src/video-icon.svg");
+        }
+      }
+    }
+  }
+
+  // типы карточек
+
+  &.lecture {
+    background: #013647;
+
+    &.with-bg {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../src/lecture-bg.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .name {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 25px;
+      text-align: center;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 40px 30px 10px 30px;
+
+      p {
+        margin: 0;
+      }
+
+    }
+
+    .photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        object-fit: cover;
+
+        &:not(:first-child) {
+          margin-left: -10px;
+        }
+      }
+    }
+
+    .lecture-title {
+      font-size: 28px;
+      line-height: 35px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 30px;
+      margin: 0;
+    }
+
+    .lecture-type {
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > * {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  &.additional-materials {
+    background: #00CED8;
+
+    .card-body {
+      z-index: 10;
+      position: relative;
+      height: 100%;
+      font-weight: bold;
+      padding: 30px 40px 20px 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      color: black;
+      flex-direction: column;
+
+      .person-info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 60px;
+
+
+        .name-and-job {
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 25px;
+          padding-left: 20px;
+        }
+        .photo {
+
+          position: relative;
+          flex-shrink: 0;
+
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      //p {
+      //  font-weight: bold;
+      //}
+    }
+
+  }
+
+  //Карточка с фотографией сверху
+  &.photo {
+    .card-photo {
+      height: 220px;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+    }
+    .card-body {
+      padding: 10px 20px 20px;
+    }
+  }
+  //Карточка с фотографией/вообще без фотографии на весь блок
+  &.photo-full {
+    .card-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      z-index: 8;
+      filter: brightness(0.5);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card-body {
+      z-index: 10;
+      position: relative;
+      height: 100%;
+      padding: 0 60px 0 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: white;
+    }
+
+    &.no-photo {
+      .card-photo {
+        img {
+          display: none;
+        }
+      }
+      .card-body {
+        color: black
+      }
+    }
+  }
+  //Карточка с мнением
+  &.person {
+    .card-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      z-index: 8;
+
+      img {
+        display: none;
+      }
+    }
+
+    .card-body {
+      z-index: 10;
+      position: relative;
+      height: 100%;
+      font-weight: bold;
+      padding: 0 60px 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      color: black;
+      flex-direction: column;
+
+      .person-info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+
+
+        .name-and-job {
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 25px;
+          padding-left: 20px;
+        }
+        .photo {
+          width: 60px;
+          height: 60px;
+          position: relative;
+          flex-shrink: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+
+            &:first-child {
+              z-index: 10;
+              border-radius: 30px;
+            }
+
+            &:last-child {
+              z-index: 8;
+              clip-path: polygon(78% 64%, 58% 85%, 100% 100%);
+            }
+          }
+        }
+      }
+
+      //p {
+      //  font-weight: bold;
+      //}
+    }
+
+  }
+  // Карточка подкаста
+  &.podcast {
+    background: black;
+    .card-photo {
+      padding-top: 10px;
+      height: 220px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        height: 100%;
+        margin: 0 auto;
+        width: auto;
+      }
+    }
+
+    .card-body {
+      color: white;
+      text-align: center;
+      padding: 20px;
+
+      p {
+        font-weight: bold;
+      }
+
+      .timing {
+        display: inline-block;
+        margin: 10px auto 0;
+        padding: 2px 10px;
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        p {
+          color: white;
+          font-weight: normal;
+          font-size: 17px;
+          line-height: 20px;
+          margin: 0;
+          display: flex;
+          align-items: center;
+
+          i {
+            font-size: 12px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    //&.press-future {
+    //  .card-photo {
+    //    background: url("../src/podcast/press-future.png") no-repeat center center;
+    //    background-size: contain;
+    //  }
+    //}
+
+    //&.press-guest {
+    //  .card-photo {
+    //    background: url("../src/podcast/press-guest.png") no-repeat center center;
+    //    background-size: contain;
+    //  }
+    //}
+    //
+    //&.press-lectorium{
+    //  .card-photo {
+    //    background: url("../src/podcast/press-lectorium.png") no-repeat center center;
+    //    background-size: contain;
+    //  }
+    //}
+    //
+    //&.press-podcasts{
+    //  .card-photo {
+    //    background: url("../src/podcast/press-podcasts.png") no-repeat center center;
+    //    background-size: contain;
+    //  }
+    //}
+    //
+    //&.press-tales{
+    //  .card-photo {
+    //    background: url("../src/podcast/press-tales.png") no-repeat center center;
+    //    background-size: contain;
+    //  }
+    //}
+  }
+  // Карточка вакансии
+  &.vacancy {
+    border-radius: 50%;
+
+    &:before {
+      content: "Вакансія";
+      font-weight: bold;
+      font-size: 23px;
+      line-height: 28px;
+      color: $active-color;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 30px;
+      text-align: center;
+      background: transparent;
+    }
+    .card-photo {
+      height: 220px;
+      background: url("../src/vacancy/vacancy.svg") no-repeat center bottom;
+      background-size: 140px 140px;
+      background-position-x: calc(50% + 10px);
+      img {
+        display: none;
+      }
+    }
+
+    .card-body {
+      margin: 15px auto 0;
+      font-size: 23px;
+      line-height: 28px;
+      text-align: center;
+
+      p {
+        font-weight: bold;
+      }
+    }
+
+    &.full-width {
+      max-width: 100%;
+      min-height: auto;
+      width: 100%;
+      height: 180px;
+      border-radius: 90px;
+      padding: 20px 35px;
+      margin-bottom: 50px;
+      &:before {
+        content: none;
+      }
+
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .card-photo {
+          width: 140px;
+          height: 140px;
+          padding: 0;
+          background-size: 140px 140px;
+          margin-right: 30px;
+          background-position: initial;
+          flex-shrink: 0;
+        }
+
+        .card-body {
+          margin: 0;
+          padding: 0;
+          text-align: left;
+
+          p {
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 45px;
+          }
+        }
+      }
+    }
+  }
+  // Карточка возможностей
+  &.capabilities {
+    background: $capability-color;
+    &:before {
+      content: "Магчымасць";
+      font-weight: bold;
+      font-size: 23px;
+      line-height: 28px;
+      color: white;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 16px;
+      text-align: center;
+      background: transparent;
+    }
+    .card-photo {
+      height: 220px;
+      background: url("../src/capabilities/capability-icon.svg") no-repeat center 75%;
+      background-size: 114px 121px;
+      img {
+        display: none;
+      }
+    }
+
+    .card-body {
+      margin: 15px auto 0;
+      padding: 0 20px;
+      font-size: 23px;
+      line-height: 28px;
+      text-align: center;
+
+      p{
+        font-weight: bold;
+      }
+
+      .timing {
+        display: inline-block;
+        margin: 10px auto 0;
+        padding: 2px 10px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        p {
+          color: black;
+          font-weight: normal;
+          font-size: 17px;
+          line-height: 20px;
+          margin: 0;
+          display: flex;
+          align-items: center;
+
+          i {
+            font-size: 15px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    &.full-width {
+      max-width: 100%;
+      width: 100%;
+      min-height: auto;
+      padding: 20px 35px;
+      margin-bottom: 40px;
+      &:before {
+        content: none;
+      }
+
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .card-photo {
+          width: 120px;
+          height: 130px;
+          padding: 0;
+          background-size: 120px 130px;
+          margin-right: 50px;
+          background-position: initial;
+          flex-shrink: 0;
+
+          img {
+            width: 120px;
+            height: auto;
+          }
+        }
+
+        .card-body {
+          margin: 0;
+          padding: 0;
+          text-align: left;
+          align-self: center;
+
+          p {
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 45px;
+          }
+
+          .timing {
+            p {
+              font-weight: normal;
+              font-size: 17px;
+              line-height: 20px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  &.banner {
+    width: 100%;
+    min-height: auto;
+    max-width: 100%;
+    padding: 60px 40px;
+    box-sizing: border-box;
+
+    &.no-photo {
+      .card-photo {
+        filter: none;
+        background: white;
+        img {
+          display: none;
+        }
+      }
+
+      .card-body {
+        p {
+          color: black
+        }
+      }
+    }
+
+    .card-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      z-index: 8;
+      filter: brightness(0.5);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card-body {
+      z-index: 10;
+      position: relative;
+      height: 100%;
+
+      p {
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 60px;
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px){
+  .media-card {
+    //max-width: 18.0952rem;
+    width: 32%;
+    min-height: 19.5238rem;
+    margin-bottom: 1.42rem;
+
+    .card-body {
+      padding: 0.5rem 1rem 1rem;
+      p {
+        font-size: 1.0952rem;
+        line-height: 1.3333rem;
+      }
+    }
+
+    .ticker {
+      padding: 0.19rem 0.2857rem;
+      font-size: 0.7142rem;
+      line-height: 0.8571rem;
+      left: -0.5rem;
+      top: -0.5rem;
+    }
+
+    // Иконка камеры после описания
+    &.video {
+      .card-body {
+        p {
+          &:after {
+            width: 1.2rem;
+            height: 0.8rem;
+            margin: 0 0.5rem;
+            background-image: url("../src/video-icon.svg");
+            background-size: contain;
+          }
+        }
+      }
+    }
+
+    // типы карточек
+
+    &.lecture {
+      .name {
+        font-size: 0.952rem  /* 20/21 */;
+        line-height: 1.19rem  /* 25/21 */;
+        padding: 1.905rem  /* 40/21 */ 1.429rem  /* 30/21 */ 0.476rem  /* 10/21 */ 1.429rem  /* 30/21 */;
+      }
+
+      .photo {
+        img {
+          width: 2.857rem  /* 60/21 */;
+          height: 2.857rem  /* 60/21 */;
+          border-radius: 1.429rem  /* 30/21 */;
+
+          &:not(:first-child) {
+            margin-left: -0.476rem  /* -10/21 */;
+          }
+        }
+      }
+
+      .lecture-title {
+        font-size: 1.333rem  /* 28/21 */;
+        line-height: 1.667rem  /* 35/21 */;
+        padding: 1.429rem  /* 30/21 */;
+      }
+
+      .lecture-type {
+
+        & > * {
+          margin: 0 0.476rem  /* 10/21 */;
+        }
+      }
+    }
+
+    &.additional-materials {
+      .card-body {
+        padding: 1.429rem  /* 30/21 */ 1.905rem  /* 40/21 */ 0.952rem  /* 20/21 */ 0.952rem  /* 20/21 */!important;
+
+        .person-info {
+          margin-bottom: 2.857rem  /* 60/21 */;
+
+
+          .name-and-job {
+            font-size: 0.952rem  /* 20/21 */;
+            line-height: 1.19rem  /* 25/21 */;
+            padding-left: 0.952rem  /* 20/21 */;
+          }
+          .photo {
+
+            img {
+              width: 2.857rem  /* 60/21 */;
+              height: 2.857rem  /* 60/21 */;
+            }
+          }
+        }
+      }
+
+    }
+
+    //Карточка с фотографией сверху
+    &.photo {
+      .card-photo {
+        height: 10.4762rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .card-body {
+        padding: 0.5rem 1rem 0;
+      }
+    }
+    //Карточка с фотографией/вообще без фотографии на весь блок
+    &.photo-full {
+      .card-body {
+        padding: 0 3rem 0 1rem;
+      }
+    }
+    //Карточка с мнением
+    &.person {
+
+      .card-body {
+        padding: 0 1rem 0 1rem;
+
+        .person-info {
+          margin-bottom: 1rem;
+
+          .name-and-job {
+            font-size: 0.95rem;
+            line-height: 1.19rem;
+            padding-left: 0.95rem;
+          }
+
+          .photo {
+            width: 3rem;
+            height: 3rem;
+          }
+        }
+      }
+
+    }
+    // Карточка подкаста
+    &.podcast {
+      background: black;
+      .card-photo {
+        height: 10.4761rem;
+      }
+
+      .card-body {
+        padding: 1rem;
+
+        .timing {
+          margin: 0.5rem auto 0;
+          padding: 0.1rem 0.5rem;
+
+          p {
+            font-size: 0.8rem;
+            line-height: 1rem;
+
+            i {
+              font-size: 0.5714rem;
+              margin-right: 0.238rem;
+            }
+          }
+        }
+      }
+
+      //&.press-future {
+      //  .card-photo {
+      //    background: url("../src/podcast/press-future.png") no-repeat center center;
+      //    background-size: contain;
+      //  }
+      //}
+      //
+      //&.press-guest {
+      //  .card-photo {
+      //    background: url("../src/podcast/press-guest.png") no-repeat center center;
+      //    background-size: contain;
+      //  }
+      //}
+      //
+      //&.press-lectorium{
+      //  .card-photo {
+      //    background: url("../src/podcast/press-lectorium.png") no-repeat center center;
+      //    background-size: contain;
+      //  }
+      //}
+      //
+      //&.press-podcasts{
+      //  .card-photo {
+      //    background: url("../src/podcast/press-podcasts.png") no-repeat center center;
+      //    background-size: contain;
+      //  }
+      //}
+      //
+      //&.press-tales{
+      //  .card-photo {
+      //    background: url("../src/podcast/press-tales.png") no-repeat center center;
+      //    background-size: contain;
+      //  }
+      //}
+    }
+    // Карточка вакансии
+    &.vacancy {
+      &:before {
+        font-size: 1.0952rem;
+        line-height: 1.3333rem;
+        top: 1.4218rem;
+      }
+      .card-photo {
+        height: 10.4761rem;
+        background-size: 6.6666rem 6.6666rem;
+        background-position-x: calc(50% + 0.5rem);
+      }
+
+      .card-body {
+        margin: 0.7142rem auto 0;
+        font-size: 1.0952rem;
+        line-height: 1.3333rem;
+      }
+
+      &.full-width {
+        height: 8.5714rem;
+        border-radius: 4.3rem;
+        padding: 1rem 1.6666rem;
+        margin-bottom: 2.38rem;
+        a {
+          .card-photo {
+            width: 6.6666rem;
+            height: 6.6666rem;
+            background-size: 6.6666rem 6.6666rem;
+            margin-right: 1.4285rem;
+          }
+
+          .card-body {
+            p {
+              font-size: 1.9rem;
+              line-height: 2.1428rem;
+            }
+          }
+        }
+      }
+    }
+    // Карточка возможностей
+    &.capabilities {
+      &:before {
+        font-size: 1.0952rem;
+        line-height: 1.3333rem;
+        top: 0.76rem;
+      }
+      .card-photo {
+        height: 10.476rem;
+        background-size: 5.4285rem 5.7619rem;
+      }
+
+      .card-body {
+        margin:  0 auto;
+        padding: 0.7142rem 1rem;
+        font-size: 1.1rem;
+        line-height: 1.3333rem;
+
+        .timing {
+          display: inline-block;
+          margin: 0.5rem auto 0;
+          padding: 0.0952rem 0.5rem;
+
+          p {
+            font-size: 0.8rem;
+            line-height: 1rem;
+
+            i {
+              font-size: 0.7142rem;
+              margin-right: 0.238rem;
+            }
+          }
+        }
+      }
+
+      &.full-width {
+        padding: 1rem 1.66rem;
+        margin-bottom: 1.9rem;
+
+        a {
+          .card-photo {
+            width: 5.71rem;
+            height: 6.19rem;
+            background-size: 5.71rem 6.19rem;
+            margin-right: 2.38rem;
+
+            img {
+              width: 5.71rem;
+              height: auto;
+            }
+          }
+
+          .card-body {
+
+            p {
+              font-weight: bold;
+              font-size: 1.9rem;
+              line-height: 2.14rem;
+            }
+
+            .timing {
+              p {
+                font-weight: normal;
+                font-size: 0.8rem;
+                line-height: 1rem;
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    &.banner {
+      padding: 2.8571rem 1.9rem;
+      min-height: auto;
+      .card-body {
+
+        p {
+          font-size: 2.38rem;
+          line-height: 2.8571rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .media-card {
+    width: 100%;
+    min-height: 410px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    .card-body {
+      padding: 0 20px!important;
+      p {
+        margin: 0;
+        font-size: 23px;
+        line-height: 28px;
+      }
+    }
+
+    &.photo {
+      .card-photo {
+        height: 220px;
+        img {
+          height: 220px;
+        }
+      }
+
+      .card-body {
+        margin-top: 10px;
+      }
+    }
+
+    &.photo-full {
+      .card-body {
+        padding: 0 20px;
+      }
+    }
+
+    &.additional-materials {
+
+      .card-body {
+        font-weight: bold;
+        padding: 20px 30px 20px 20px!important;
+
+        .person-info {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 60px;
+
+
+          .name-and-job {
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 25px;
+            padding-left: 20px;
+          }
+          .photo {
+
+            position: relative;
+            flex-shrink: 0;
+
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        //p {
+        //  font-weight: bold;
+        //}
+      }
+
+    }
+
+    &.lecture {
+
+      .name {
+        padding-top: 20px;
+      }
+
+
+      .lecture-title {
+        font-size: 25px;
+        line-height: 32px;
+      }
+    }
+
+    &.person {
+      .card-body {
+        padding: 0 20px;
+
+        .person-info {
+          .name-and-job {
+            font-size: 18px;
+            line-height: 25px;
+            padding-left: 20px;
+          }
+
+          .photo {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+
+    &.podcast {
+      .card-body {
+        padding: 0 20px;
+      }
+      .card-photo {
+        height: 220px;
+      }
+    }
+
+    &.capabilities {
+      &:before {
+        font-size: 23px;
+        line-height: 28px;
+      }
+      .card-photo {
+        height: 220px;
+        background-size: 114px 121px;
+      }
+
+      &.full-width {
+        min-height: auto;
+        padding: 15px;
+        margin-bottom: 30px;
+        a {
+          .card-photo {
+            width: 80px;
+            height: 90px;
+            padding: 0;
+            background-size: 80px 90px;
+            margin-right: 20px;
+            background-position: initial;
+            flex-shrink: 0;
+          }
+
+          .card-body {
+            margin: 0;
+            padding: 0!important;
+            text-align: left;
+
+
+            p {
+              font-weight: bold;
+              font-size: 20px;
+              line-height: 25px;
+            }
+
+            .timing {
+              p {
+                font-weight: normal;
+                font-size: 17px;
+                line-height: 20px;
+
+
+                i {
+                  font-size: 14px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    &.vacancy {
+      &:before {
+        font-size: 23px;
+        line-height: 28px;
+      }
+      .card-photo {
+        height: 220px;
+        background-size: 140px 140px;
+      }
+
+      &.full-width {
+        min-height: auto;
+        padding: 15px 25px;
+        margin-bottom: 30px;
+        height: auto;
+        a {
+          .card-photo {
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            background-size: 60px 60px;
+            margin-right: 20px;
+            background-position: initial;
+            flex-shrink: 0;
+          }
+
+          .card-body {
+            margin: 0;
+            padding: 0!important;
+            text-align: left;
+
+
+            p {
+              font-weight: bold;
+              font-size: 20px;
+              line-height: 25px;
+            }
+
+            .timing {
+              p {
+                font-weight: normal;
+                font-size: 17px;
+                line-height: 20px;
+
+
+                i {
+                  font-size: 14px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    &.banner {
+      padding: 40px 25px;
+      min-height: auto;
+      .card-body {
+        p {
+          font-size: 35px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .media-card {
+    min-height: 17.826rem;
+    padding-bottom: 0.652rem;
+    margin-bottom: 1.304rem;
+    .card-body {
+      padding: 0 0.87rem!important;
+      p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.217rem;
+      }
+    }
+
+    .ticker {
+      padding: 0.174rem 0.261rem;
+      font-size: 0.652rem;
+      line-height: 0.783rem;
+      left: -0.435rem;
+      top: -0.435rem;
+    }
+
+    &.photo {
+      .card-photo {
+        height: 9.565rem;
+        img {
+          height: 9.565rem;
+        }
+      }
+
+      .card-body {
+        margin-top: 0.435rem;
+      }
+    }
+
+    &.photo-full {
+      .card-body {
+        padding: 0 0.87rem;
+      }
+    }
+
+    &.person {
+      .card-body {
+        padding: 0 0.87rem;
+
+        .person-info {
+          .name-and-job {
+            font-size: 0.783rem;
+            line-height: 1.087rem;
+            padding-left: 0.87rem;
+          }
+
+          .photo {
+            width: 2.174rem;
+            height: 2.174rem;
+          }
+        }
+      }
+    }
+
+    &.podcast {
+      .card-body {
+        padding: 0 0.87rem;
+      }
+      .card-photo {
+        height: 9.565rem;
+      }
+    }
+
+    &.capabilities {
+      &:before {
+        font-size: 1rem;
+        line-height: 1.217rem;
+      }
+      .card-photo {
+        height: 9.565rem;
+        background-size: 4.957rem 5.261rem;
+      }
+
+      &.full-width {
+        min-height: auto;
+        padding: 0.652rem;
+        margin-bottom: 1.304rem;
+        a {
+          .card-photo {
+            width: 3.478rem;
+            height: 3.913rem;
+            padding: 0;
+            background-size: 3.478rem 3.913rem;
+            margin-right: 0.87rem;
+            background-position: initial;
+            flex-shrink: 0;
+          }
+
+          .card-body {
+            margin: 0;
+            padding: 0!important;
+            text-align: left;
+
+
+            p {
+              font-weight: bold;
+              font-size: 0.87rem;
+              line-height: 1.087rem;
+            }
+
+            .timing {
+              p {
+                font-weight: normal;
+                font-size: 0.739rem;
+                line-height: 0.87rem;
+
+
+                i {
+                  font-size: 0.609rem;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    &.vacancy {
+      &:before {
+        font-size: 1rem;
+        line-height: 1.217rem;
+      }
+      .card-photo {
+        height: 9.565rem;
+        background-size: 6.087rem 6.087rem;
+      }
+
+      &.full-width {
+        min-height: auto;
+        padding: 0.652rem 1.087rem;
+        margin-bottom: 1.304rem;
+        height: auto;
+        a {
+          .card-photo {
+            width: 2.609rem;
+            height: 2.609rem;
+            padding: 0;
+            background-size: 2.609rem 2.609rem;
+            margin-right: 0.87rem;
+            background-position: initial;
+            flex-shrink: 0;
+          }
+
+          .card-body {
+            margin: 0;
+            padding: 0!important;
+            text-align: left;
+
+
+            p {
+              font-weight: bold;
+              font-size: 0.87rem;
+              line-height: 1.087rem;
+            }
+
+            .timing {
+              p {
+                font-weight: normal;
+                font-size: 0.739rem;
+                line-height: 0.87rem;
+
+
+                i {
+                  font-size: 0.609rem;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    &.banner {
+      padding: 1.739rem 1.087rem;
+      min-height: auto;
+      .card-body {
+        p {
+          font-size: 1.522rem;
+          line-height: 1.739rem;
+        }
+      }
+    }
+  }
+}

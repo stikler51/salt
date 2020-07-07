@@ -1,0 +1,400 @@
+.all-lectures {
+  .lecture.full-width {
+    margin-bottom: 20px;
+  }
+}
+
+.lecture.full-width {
+  margin-bottom: 100px;
+
+  &.last {
+    margin-bottom: 50px;
+  }
+
+  &:last-of-type{
+    margin-bottom: 0!important;
+  }
+
+  &.full-width {
+    padding: 60px 0;
+    background: #013647;
+
+    &.with-bg {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../src/lecture-bg.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &.with-additional-materials{
+      .main-info {
+        border-right: 1px solid white;
+      }
+    }
+
+
+    .container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+
+      .main-info{
+        width: 73%;
+        padding-right: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        .author {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .photo {
+            display: flex;
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 30px;
+              object-fit: cover;
+
+              &:not(:first-child) {
+                margin-left: -10px;
+              }
+            }
+          }
+
+          .name {
+            margin-left: 20px;
+            p {
+              font-style: normal;
+              font-weight: 500;
+              font-size: 30px;
+              line-height: 35px;
+              color: #FFFFFF;
+              margin: 0;
+            }
+
+          }
+        }
+
+        .lecture-title {
+          margin-top: 15px;
+          a {
+            font-weight: 900;
+            font-size: 55px;
+            line-height: 65px;
+            font-feature-settings: 'case' on, 'cpsp' on;
+            color: white;
+            border-bottom: 1px solid #00CED8;
+
+            &:hover {
+              color: #00CED8;
+            }
+          }
+        }
+
+        .lecture-prologue {
+          font-weight: 500;
+          font-size: 30px;
+          line-height: 40px;
+          color: #FFFFFF;
+          margin: 40px 0;
+        }
+
+        .lecture-type {
+          border: 1px solid #FFFFFF;
+          box-sizing: border-box;
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          color: white;
+          padding: 9px 15px;
+          display: flex;
+          align-items: center;
+          width: fit-content;
+          font-size: 25px;
+          line-height: 25px;
+
+          & > * {
+            margin-right: 15px;
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .additional-materials {
+        width: 27%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-left: 90px;
+
+        & > * {
+          margin-bottom: 40px;
+          margin-top: 0;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        .additional-materials-title {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 26px;
+          line-height: 30px;
+          font-feature-settings: 'salt' on;
+          color: #FFFFFF;
+        }
+
+        a {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 25px;
+          color: #FFFFFF;
+          border-bottom: 1px solid #00CED8;
+
+          &:hover {
+            color: #00CED8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px) {
+  .all-lectures {
+    .lecture.full-width {
+      margin-bottom: 0.952rem  /* 20/21 */;
+    }
+  }
+
+  .lecture.full-width {
+    margin-bottom: 4.762rem  /* 100/21 */;
+
+
+    &.last {
+      margin-bottom: 2.381rem  /* 50/21 */;
+    }
+
+
+    &.full-width {
+      padding: 2.857rem  /* 60/21 */ 0;
+
+      .container {
+        .main-info{
+          width: 73%;
+          padding-right: 4.286rem  /* 90/21 */;
+
+          .author {
+            .photo {
+              img {
+                width: 2.857rem  /* 60/21 */;
+                height: 2.857rem  /* 60/21 */;
+                border-radius: 1.429rem  /* 30/21 */;
+
+                &:not(:first-child) {
+                  margin-left: -0.476rem  /* -10/21 */;
+                }
+              }
+            }
+
+            .name {
+              margin-left: 0.952rem  /* 20/21 */;
+              p {
+                font-size: 1.429rem  /* 30/21 */;
+                line-height: 1.667rem  /* 35/21 */;
+              }
+
+            }
+          }
+
+          .lecture-title {
+            margin-top: 0.714rem  /* 15/21 */;
+            a {
+              font-size: 2.619rem  /* 55/21 */;
+              line-height: 3.095rem  /* 65/21 */;
+            }
+          }
+
+          .lecture-prologue {
+            font-size: 1.429rem  /* 30/21 */;
+            line-height: 1.905rem  /* 40/21 */;
+            margin: 1.905rem  /* 40/21 */ 0;
+          }
+
+          .lecture-type {
+            box-shadow: 0.095rem  /* 2/21 */ 0.095rem  /* 2/21 */ 0.286rem  /* 6/21 */ rgba(0, 0, 0, 0.1);
+            border-radius: 0.19rem  /* 4/21 */;
+            padding: 0.429rem  /* 9/21 */ 0.714rem  /* 15/21 */;
+            font-size: 1.19rem  /* 25/21 */;
+            line-height: 1.19rem  /* 25/21 */;
+
+            & > * {
+              margin-right: 0.714rem  /* 15/21 */;
+            }
+          }
+        }
+
+        .additional-materials {
+          padding-left: 4.286rem  /* 90/21 */;
+
+          & > * {
+            margin-bottom: 1.905rem  /* 40/21 */;
+          }
+
+          .additional-materials-title {
+            font-size: 1.238rem  /* 26/21 */;
+            line-height: 1.429rem  /* 30/21 */;
+          }
+
+          a {
+            font-size: 0.952rem  /* 20/21 */;
+            line-height: 1.19rem  /* 25/21 */;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .all-lectures {
+    .lecture.full-width {
+      margin-bottom: 10px;
+    }
+  }
+
+  .lecture.full-width {
+    margin-bottom: 60px;
+
+
+    &.last {
+      margin-bottom: 30px;
+    }
+
+    &.full-width {
+      padding: 40px 0;
+
+      &.with-additional-materials{
+        .main-info {
+          border-right: 0;
+          border-bottom: 1px solid white;
+        }
+      }
+
+
+      .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-direction: column;
+
+        .main-info{
+          width: 100%;
+          padding-right: 0;
+          padding-bottom: 30px;
+
+          .author {
+            .photo {
+              display: flex;
+              img {
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+
+                &:not(:first-child) {
+                  margin-left: -10px;
+                }
+              }
+            }
+
+            .name {
+              margin-left: 15px;
+              p {
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 20px;
+              }
+
+            }
+          }
+
+          .lecture-title {
+            margin-top: 15px;
+            margin-bottom: 0;
+            a {
+              font-size: 30px;
+              line-height: 35px;
+            }
+          }
+
+          .lecture-prologue {
+            font-size: 18px;
+            line-height: 25px;
+            margin: 30px 0;
+          }
+
+          .lecture-type {
+            border: 1px solid #FFFFFF;
+            box-sizing: border-box;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            color: white;
+            padding: 6px 15px;
+            font-size: 18px;
+            line-height: 20px;
+
+            & > * {
+              margin-right: 15px;
+
+              &:last-child {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        .additional-materials {
+          width: 100%;
+          padding-left: 0;
+          padding-top: 30px;
+
+          & > * {
+            margin-bottom: 20px;
+            margin-top: 0;
+
+            &:first-child {
+              margin-top: 0;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          .additional-materials-title {
+            font-weight: 500;
+            font-size: 23px;
+            line-height: 30px;
+          }
+
+          a {
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+  }
+}

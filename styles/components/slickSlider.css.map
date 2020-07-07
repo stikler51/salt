@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,0BAAa;EACX,OAAO,EAAE,MAAM",
+"sources": ["slickSlider.scss"],
+"names": [],
+"file": "slickSlider.css"
+}

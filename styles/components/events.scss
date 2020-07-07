@@ -1,0 +1,336 @@
+@charset "utf-8";
+.event-card {
+  max-width: 290px;
+  min-height: 340px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.online {
+    .event-card-header {
+      position: relative;
+
+      &:after {
+        content: "Анлайн";
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFFFFF;
+        background: $active-color;
+        position: absolute;
+        right: -30px;
+        top: -20px;
+      }
+    }
+  }
+
+  &.actual {
+    .icon {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        object-fit: cover;
+
+        &:not(:first-child) {
+          margin-left: -20px;
+        }
+      }
+    }
+  }
+
+  &.archive {
+    .event-card-header {
+      color: #AAAAAA;
+      border-color: #AAAAAA;
+
+      &:after {
+        background: #AAAAAA;
+      }
+    }
+
+
+
+    &:not(.actual) {
+      .icon {
+        filter: grayscale(1) brightness(1.2);
+      }
+    }
+  }
+
+  &.celebration {
+    .icon {
+      background: url("../src/event-icons/celebration.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.club {
+    .icon {
+      background: url("../src/event-icons/club.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.mediabreakfast {
+    .icon {
+      background: url("../src/event-icons/mediabreakfast.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.latuzcka {
+    .icon {
+      background: url("../src/event-icons/latuczka.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.lecture {
+    .icon {
+      background: url("../src/event-icons/lecture.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.masterclass {
+    .icon {
+      background: url("../src/event-icons/masterclass.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.mediatalk {
+    .icon {
+      background: url("../src/event-icons/mediatalk.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.pressconference {
+    .icon {
+      background: url("../src/event-icons/pressconference.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  &.roundtable {
+    .icon {
+      background: url("../src/event-icons/roundtable.svg") no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+  .event-card-link {
+    padding: 10px 20px 35px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .event-card-header {
+    border-bottom: 1px solid $active-color;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    color: $active-color;
+
+    .date {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 43px;
+      line-height: 43px;
+    }
+
+    .month-and-day {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 10px;
+
+      .day {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      .month {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 16px;
+      }
+    }
+
+    .time {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+
+  .event-card-body {
+    padding-top: 62px;
+    .icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .body-text {
+      margin-bottom: 0;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 1360px) and (min-width: 768px){
+
+  .event-card {
+    //width: 13.8rem;
+    min-height: 16.19rem;
+
+    &.online {
+      .event-card-header {
+        &:after {
+          padding: 0.095rem 0.2857rem;
+          font-size: 0.7142rem;
+          line-height: 0.8571rem;
+          right: -1rem;
+          top: -1rem;
+        }
+      }
+    }
+
+    &.actual {
+      .icon {
+        img {
+          width: 2.85rem;
+          height: 2.85rem;
+
+          &:not(:first-child) {
+            margin-left: -1rem;
+          }
+        }
+      }
+    }
+
+    .event-card-link {
+      padding: 0.5rem 0.5rem 1rem;
+    }
+
+    .event-card-header {
+      padding-bottom: 0.5rem;
+
+      .date {
+        font-size: 2.2rem;
+        line-height: 2.1rem;
+      }
+
+      .month-and-day {
+        padding-left: 0.5rem;
+
+        .day {
+          font-size: 0.8571rem;
+          line-height: 1.1rem;
+        }
+
+        .month {
+          font-size: 0.8571rem;
+          line-height: 1.1428rem;
+        }
+      }
+
+      .time {
+        font-size: 0.8571rem;
+        line-height: 1rem;
+      }
+    }
+
+    .event-card-body {
+      padding-top: 3rem;
+      .icon {
+        width: 2.85rem;
+        height: 2.85rem;
+        margin-bottom: 0.5rem;
+      }
+      .body-text {
+        font-size: 0.9rem;
+        line-height: 1rem;
+      }
+    }
+  }
+
+
+  .events-slider {
+    .glide__arrow--left {
+      left: 2em;
+      width: 2.5rem;
+      height: 2.5rem;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    .glide__arrow--right {
+      right: 2em;
+      width: 2.5rem;
+      height: 2.5rem;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .events-slider {
+    &:before {
+      content: none;
+    }
+
+    &:after {
+      content: none;
+    }
+
+    .glide__arrows {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .event-card {
+    &.online {
+      .event-card-header {
+        position: relative;
+
+        &:after {
+          content: "Анлайн";
+          padding: 0.095rem 0.261rem;
+          font-size: 0.652rem;
+          line-height: 0.783rem;
+        }
+      }
+    }
+  }
+}

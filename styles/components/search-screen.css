@@ -1,0 +1,9 @@
+.search-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222222;
+  min-height: 100vh;
+  z-index: 10; }
+
+/*# sourceMappingURL=search-screen.css.map */

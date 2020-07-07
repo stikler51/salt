@@ -1,19 +1,19 @@
 # salt
 
-[https://salt.now.sh](https://salt.now.sh)
+[https://salt-eight.vercel.app](https://salt-eight.vercel.app)
 
-[https://salt.now.sh/all-lectures.html](https://salt.now.sh/all-lectures.html)
+[https://salt-eight.vercel.app/all-lectures.html](https://salt-eight.vercel.app/all-lectures.html)
 
-[https://salt.now.sh/lectures-by-theme.html](https://salt.now.sh/lectures-by-theme.html)
+[https://salt-eight.vercel.app/lectures-by-theme.html](https://salt-eight.vercel.app/lectures-by-theme.html)
 
-[https://salt.now.sh/lecture.html](https://salt.now.sh/lecture.html)
+[https://salt-eight.vercel.app/lecture.html](https://salt-eight.vercel.app/lecture.html)
 
-[https://salt.now.sh/additional-material.html](https://salt.now.sh/additional-material.html)
+[https://salt-eight.vercel.app/additional-material.html](https://salt-eight.vercel.app/additional-material.html)
 
-[https://salt.now.sh/compilations.html](https://salt.now.sh/compilations.html)
+[https://salt-eight.vercel.app/compilations.html](https://salt-eight.vercel.app/compilations.html)
 
-[https://salt.now.sh/compilation-subpage.html](https://salt.now.sh/compilation-subpage.html)
+[https://salt-eight.vercel.app/compilation-subpage.html](https://salt-eight.vercel.app/compilation-subpage.html)
 
-[https://salt.now.sh/tag.html](https://salt.now.sh/tag.html)
+[https://salt-eight.vercel.app/tag.html](https://salt-eight.vercel.app/tag.html)
 
-[https://salt.now.sh/tagshtml](https://salt.now.sh/tags.html)
+[https://salt-eight.vercel.app/tagshtml](https://salt-eight.vercel.app/tags.html)

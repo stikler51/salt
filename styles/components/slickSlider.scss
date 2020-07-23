@@ -277,6 +277,42 @@
 
     }
   }
+
+  .events-block {
+    .events-slider-wrapper {
+
+      &:before {
+        width: 5%;
+      }
+
+      &:after {
+        width: 5%;
+      }
+    }
+  }
+
+  .compilation-slider-wrapper {
+    &:before {
+      width: 5%;
+    }
+
+    &:after {
+      width: 5%;
+    }
+  }
+
+  .compilation-block {
+    .compilation-slider-wrapper {
+      &:before {
+        width: 5%;
+      }
+
+      &:after {
+        width: 5%;
+      }
+    }
+
+  }
 }
 
 @media screen and (max-width: 768px){

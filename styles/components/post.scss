@@ -1,3 +1,4 @@
+@charset "utf-8";
 .post {
   .post-body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
@@ -541,6 +542,7 @@
       align-items: center;
       justify-content: flex-start;
       margin-bottom: 20px;
+      margin-top: 80px!important;
 
       & + h2 {
         margin-top: 0;
@@ -1169,6 +1171,7 @@
               margin: 0;
 
               a {
+                font-weight: 500;
                 border-color: black;
 
                 &:hover {
@@ -2680,7 +2683,8 @@
       }
 
       .listicle {
-        margin-bottom: 15px;
+        margin-top: 60px!important;
+        margin-bottom: 15px!important;
 
         & + h2 {
           margin-top: 0;
@@ -3051,6 +3055,7 @@
               }
               svg {
                 order: 1;
+                height: 20px;
               }
             }
 
@@ -3335,4 +3340,74 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 550px) {
+  .post {
+    &.article {
+      .article-header {
+        .lecture-btns {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .lecture-type {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+              margin-right: 0.952rem;
+
+              i {
+                font-size: 1.333rem;
+              }
+
+
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+
+          a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 0.571rem;
+            line-height: 0.619rem;
+            padding: 0 0.238rem;
+            min-width: 2.714rem;
+            border: 1px solid #FFFFFF;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 2.714rem;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            transition: 0.3s;
+
+            &.to-additional-materials {
+              &:before {
+                content: "Раздатки";
+                order: 2;
+              }
+              svg {
+                order: 1;
+                height: 0.952rem;
+              }
+            }
+
+            svg {
+              height: 0.952rem;
+              width: auto;
+              margin-bottom: 0.238rem;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
 }

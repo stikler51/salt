@@ -66,8 +66,8 @@ function toggleMobileSubMenu() {
         if (window.innerWidth < 768) {
             e.stopPropagation();
             e.preventDefault();
+            $(this).children('.sub-menu-wrapper').slideToggle().clearQueue();
             $(this).toggleClass('opened');
-            // $('.sub-menu').slideToggle().clearQueue();
         }
     });
 }
@@ -93,7 +93,7 @@ function showSearchScreen() {
             btn.addEventListener('click', () => {
                 document.body.classList.add('overflowed');
                 searchScreen.classList.add('active', "animate__fadeIn")
-
+                searchScreen.querySelector('.search-field').focus();
             })
         })
     }

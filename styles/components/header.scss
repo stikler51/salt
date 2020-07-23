@@ -63,13 +63,35 @@
           font-size:12px;
           flex-shrink: 0;
           transition: border-color 0.3s;
+
+          svg {
+            width: 15px;
+            height: auto;
+            path {
+              transition: 0.3s;
+            }
+          }
         }
 
         &:hover {
-          color: $hover-color;
+          svg {
+            path {
+              fill: $hover-color;
+            }
+          }
+          color:$hover-color;
 
           i {
             border-color: $hover-color;
+          }
+
+          &.enter-btn {
+            svg {
+              path {
+                fill: none;
+                stroke: $hover-color;
+              }
+            }
           }
         }
 
@@ -79,7 +101,7 @@
           p {
             font-weight: 500;
             font-size: 12px;
-            line-height: 20px;
+            line-height: 14px;
             color: #FFC69D;
             transition: 0.3s;
             margin: 0;
@@ -118,6 +140,8 @@
             }
           }
         }
+
+
       }
     }
 
@@ -199,7 +223,10 @@
             height: 1.429rem  /* 30/21 */;
             border: 0.095rem  /* 2/21 */ solid #FFFFFF;
             font-size:0.571rem  /* 12/21 */;
+
           }
+
+
 
           &.pc-btn {
             width: 2.45rem  /* 50/21 */;
@@ -221,6 +248,8 @@
           }
         }
       }
+
+
     }
 
     .bottom-line {
@@ -259,6 +288,10 @@
       min-height: 100vh;
       height: 100%;
       overflow-y: scroll;
+    }
+
+    .container {
+      max-width: unset;
     }
 
     .logo-wrapper {
@@ -314,6 +347,21 @@
             flex-shrink: 0;
             color: #97E9ED;
             transition: border-color 0.3s;
+
+            svg {
+              path {
+                fill: #97E9ED;
+              }
+            }
+          }
+
+          &.enter-btn {
+            svg {
+              path {
+                fill: none;
+                stroke: #97E9ED;
+              }
+            }
           }
 
           &:hover {

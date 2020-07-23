@@ -128,6 +128,8 @@
 
       p {
         margin: 0;
+        font-size: 21px;
+        line-height: 25px;
       }
 
     }
@@ -740,6 +742,11 @@
         font-size: 0.952rem  /* 20/21 */;
         line-height: 1.19rem  /* 25/21 */;
         padding: 1.905rem  /* 40/21 */ 1.429rem  /* 30/21 */ 0.476rem  /* 10/21 */ 1.429rem  /* 30/21 */;
+
+        p {
+          font-size: 0.952rem  /* 20/21 */;
+          line-height: 1.19rem  /* 25/21 */;
+        }
       }
 
       .photo {

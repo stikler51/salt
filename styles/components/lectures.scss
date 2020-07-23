@@ -28,7 +28,7 @@
 
     &.with-additional-materials{
       .main-info {
-        border-right: 1px solid white;
+        border-right: 1px solid #00868C;
       }
     }
 
@@ -80,13 +80,14 @@
 
         .lecture-title {
           margin-top: 15px;
+          margin-bottom: 0;
           a {
             font-weight: 900;
             font-size: 55px;
             line-height: 65px;
             font-feature-settings: 'case' on, 'cpsp' on;
             color: white;
-            border-bottom: 1px solid #00CED8;
+            border-bottom: 1px solid #00868C;
 
             &:hover {
               color: #00CED8;
@@ -136,6 +137,7 @@
         & > * {
           margin-bottom: 40px;
           margin-top: 0;
+          line-height: 25px;
 
           &:first-child {
             margin-top: 0;
@@ -160,7 +162,7 @@
           font-size: 20px;
           line-height: 25px;
           color: #FFFFFF;
-          border-bottom: 1px solid #00CED8;
+          border-bottom: 1px solid #00868C;
 
           &:hover {
             color: #00CED8;

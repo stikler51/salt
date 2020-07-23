@@ -177,7 +177,7 @@ body {
     font-size: 50px;
     line-height: 60px;
     color: #222222;
-    margin: 0 0 35px 0;
+    margin: 0 0 20px 0;
 
     &.nested {
       font-weight: 700;
@@ -250,8 +250,9 @@ body {
           border: 1px solid white;
           border-radius: 14px;
           //margin-bottom: 15px;
-          margin: 0 5px 15px 5px;
+          margin: 0 10px 15px 0px;
           padding: 0;
+          transition: 0.3s;
           &:before {
             content: none;
           }
@@ -261,6 +262,10 @@ body {
 
             a {
               color: #013647;
+            }
+
+            &:hover {
+              background: white;
             }
           }
 
@@ -280,11 +285,11 @@ body {
           }
 
           &:hover {
-            background: white;
+            background: #CEF8F820;
 
-            a {
-              color: #013647;
-            }
+            //a {
+            //  color: #013647;
+            //}
           }
         }
       }

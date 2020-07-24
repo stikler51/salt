@@ -3531,7 +3531,7 @@
 .post.article .article-header {
   padding: 20px 0 50px 0;
   max-width: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../src/post-header-bg.jpg");
+  background: #013647;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }

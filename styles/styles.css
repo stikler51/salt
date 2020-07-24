@@ -3525,7 +3525,8 @@
 .post main {
   padding-top: 20px; }
 .post.article .compilation-block, .post.article .slider-block {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  overflow: hidden; }
 .post.article main {
   padding-bottom: 0; }
 .post.article .article-header {

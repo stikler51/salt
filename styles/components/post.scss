@@ -903,6 +903,7 @@
   &.article {
     .compilation-block, .slider-block {
       margin-bottom: 20px;
+      overflow: hidden;
     }
 
     main {
